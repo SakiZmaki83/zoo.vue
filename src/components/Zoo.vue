@@ -13,7 +13,8 @@
   <tr v-for="(animal, key) in animals" :key="key">
      <td>{{ animal.vrsta }}</td>
      <td>{{ animal.ime }}</td>
-     <td>{{ animal.datumRodjenja }}</td>
+    <td v-if="(animal.datumRodjenja) != ''">{{ animal.datumRodjenja }}</td>
+    <td v-else > Nepoznat </td>
   </tr>
   </tbody>
   </table>
