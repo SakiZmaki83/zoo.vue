@@ -15,6 +15,9 @@
      <td>{{ animal.ime }}</td>
     <td v-if="(animal.datumRodjenja) != ''">{{ animal.datumRodjenja }}</td>
     <td v-else > Nepoznat </td>
+    <td>
+          <button @click="removeAnimal(animal)">Remove</button>
+        </td>
   </tr>
   </tbody>
   </table>
@@ -36,6 +39,11 @@ export default {
         { vrsta: 'vodozemac', ime: 'zaba', datumRodjenja: ''},
         { vrsta: 'riba', ime: 'japanka', datumRodjenja: 2017}
       ]
+    }
+  },
+  methods: {
+    removeAnimal(animal) {
+      this.animals.splice(this.animals.indexOf(animal), 1)
     }
   }
 }
